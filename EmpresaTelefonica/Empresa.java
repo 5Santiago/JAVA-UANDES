@@ -40,7 +40,23 @@ public class Empresa
     {
         linea3.agregarLlamadaLargaDistancia(minutos);
     }
-    public double darCostollamadas()
+    public void agregarLlamadaCelularLinea1(int minutos)
+    {
+        linea1.agregarLlamadaCelular(minutos);
+    }
+    public void agregarLlamadaCelularLinea2(int minutos)
+    {
+        linea2.agregarLlamadaCelular(minutos);
+    }
+    public void agregarLlamadaCelularLinea3(int minutos)
+    {
+        linea3.agregarLlamadaCelular(minutos);
+    }
+    public int darTotalNumeroLlamadas()
+    {
+        return linea1.darNumeroLlamadas()+linea2.darNumeroLlamadas()+linea3.darNumeroLlamadas();
+    }
+    public double darTotalCostollamadas()
     {
         return linea1.darCostollamadas()+linea2.darCostollamadas()+linea3.darCostollamadas();
     }
@@ -50,7 +66,7 @@ public class Empresa
     }
     public double darCostoPromedioMinuto()
     {
-        return darCostollamadas()/darTotalMinutos();
+        return darTotalCostollamadas()/darTotalMinutos();
     }
     public void inicializar()
     {
@@ -60,6 +76,12 @@ public class Empresa
         linea2.inicializar();
         linea3 = new LineaTelefonica();
         linea3.inicializar();
+    }
+    public void reiniciar()
+    {
+        linea1.reiniciar();
+        linea2.reiniciar();
+        linea3.reiniciar();
     }
     
 }

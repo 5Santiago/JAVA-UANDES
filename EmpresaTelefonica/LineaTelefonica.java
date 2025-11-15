@@ -11,6 +11,12 @@ public class LineaTelefonica
 
 
     }
+    public void reiniciar()
+    {
+        costoLlamadas = 0.0;
+        numeroLlamadas = 0;
+        numeroMinutos = 0;
+    }
     public double darCostollamadas()
     {
         return costoLlamadas;
@@ -33,7 +39,12 @@ public class LineaTelefonica
     {
         numeroLlamadas++;
         numeroMinutos = numeroMinutos+minutos;
-        costoLlamadas = costoLlamadas + minutos*100;
+        costoLlamadas = costoLlamadas + minutos*35;
     }
-
+    public void agregarLlamadaCelular(int minutos)
+    {
+        numeroLlamadas++;
+        numeroMinutos = numeroMinutos+minutos;
+        costoLlamadas = costoLlamadas + minutos*999;
+    }
 }
